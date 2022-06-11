@@ -8,7 +8,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
   <link rel="stylesheet" href="./assets/css/login.css">
-  
+
 </head>
 
 <body>
@@ -35,12 +35,12 @@
         <!-- 密码 -->
         <div class="layui-form-item">
           <i class="layui-icon layui-icon-password"></i>
-          <input type="password" name="userpassword" required lay-verify="required" placeholder="请输入密码"
+          <input type="password" name="userpassword" required lay-verify="required|pwd" placeholder="请输入密码"
             autocomplete="off" class="layui-input">
         </div>
         <!-- 按钮 -->
         <div class="layui-form-item">
-          <button type="button" lay-submit class="layui-btn  layui-btn-normal layui-btn-fluid">登录</button>
+          <button class="layui-btn  layui-btn-normal layui-btn-fluid" lay-submit>登录</button>
         </div>
         <!-- 注册 -->
         <div class="layui-form-item links"><a href="javascript:;" id="logouserinBtn">
@@ -55,7 +55,7 @@
     </div>
     <!-- 去登录 -->
     <div class="logouseradd" style="display:none">
-      <form class="layui-form" action="">
+      <form class="layui-form" action="" id="adduser">
         <div class="layui-form-item">
           <!-- 用户名 -->
           <i class="layui-icon layui-icon-username"></i>
@@ -71,12 +71,12 @@
         <!-- 密码再次确认 -->
         <div class="layui-form-item">
           <i class="layui-icon layui-icon-password"></i>
-          <input type="password" name="userpassword1" required lay-verify="required" placeholder="请再次输入密码"
+          <input type="password" name="userpassword1" required lay-verify="required|repwd" placeholder="请再次输入密码"
             autocomplete="off" class="layui-input">
         </div>
         <!-- 按钮 -->
         <div class="layui-form-item">
-          <button type="button" lay-submit class="layui-btn  layui-btn-normal layui-btn-fluid">创建</button>
+          <button class="layui-btn  layui-btn-normal layui-btn-fluid" lay-submit>创建</button>
         </div>
         <!-- 注册 -->
         <div class="layui-form-item links"><a href="javascript:;" id="logouseraddBtn">
@@ -89,6 +89,8 @@
 
     </div>
   </div>
+  <!-- 导入leyui的js文件  -->
+  <script src="./assets/lib/layui/layui.all.js"></script>
   <script src="./assets/js/yinghua.js"></script>
   <script src="./assets/lib/jquery.js"></script>
   <script src="./assets/js/login.js"></script>
