@@ -25,7 +25,7 @@
 
     </div>
     <div class="logouserin">
-      <form class="layui-form" action="">
+      <form class="layui-form" action="" id="userin">
         <div class="layui-form-item">
           <!-- 用户名 -->
           <i class="layui-icon layui-icon-username"></i>
@@ -35,7 +35,7 @@
         <!-- 密码 -->
         <div class="layui-form-item">
           <i class="layui-icon layui-icon-password"></i>
-          <input type="password" name="userpassword" required lay-verify="required|pwd" placeholder="请输入密码"
+          <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码"
             autocomplete="off" class="layui-input">
         </div>
         <!-- 按钮 -->
@@ -65,8 +65,8 @@
         <!-- 密码 -->
         <div class="layui-form-item">
           <i class="layui-icon layui-icon-password"></i>
-          <input type="password" name="userpassword" required lay-verify="required" placeholder="请输入密码"
-            autocomplete="off" class="layui-input">
+          <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+            class="layui-input">
         </div>
         <!-- 密码再次确认 -->
         <div class="layui-form-item">
@@ -93,6 +93,7 @@
   <script src="./assets/lib/layui/layui.all.js"></script>
   <script src="./assets/js/yinghua.js"></script>
   <script src="./assets/lib/jquery.js"></script>
+  <script src="./assets/js/baseAPI.js"></script>
   <script src="./assets/js/login.js"></script>
 </body>
 

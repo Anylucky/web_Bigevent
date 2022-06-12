@@ -20,7 +20,7 @@ $(function () {
       , '密码必须6到12位，且不能出现空格'
     ],
     repwd: function (value) {
-      var pwd1 = $('.logouseradd [name = userpassword]').val()
+      var pwd1 = $('.logouseradd [name = password]').val()
       if (pwd1 !== value) {
         return '两次密码输入的不一致'
       }
@@ -33,7 +33,7 @@ $(function () {
 
     $.ajax({
       type: 'post',
-      url: 'http://www.liulongbin.top:3007/api/reguser',
+      url: '/api/reguser',
       data: {
         username: $('.logouseradd [name = username]').val(),
         password: $('.logouseradd [name = userpassword]').val()
@@ -43,6 +43,24 @@ $(function () {
         if (res.status !== 0) return layer.msg(res.message)
         layer.msg('注册成功,请登录')
         $('#logouseraddBtn').click()
+      }
+    })
+  })
+  // 监听用户登录事件
+  $('#userin').on('submit', function (e) {
+    e.preventDefault()
+    // console.log($(this).serialize());
+    const username = $('')
+    $.ajax({
+      url: '/api/login',
+      type: 'post',
+      data: $(this).serialize(),
+      success: function (res) {
+        console.log(res.status);
+        if (res.status !== 0) return layer.msg(res.message)
+        layer.msg(res.message)
+        localStorage.setItem('token', res.token)
+        location.href = './index.html'
       }
     })
   })
