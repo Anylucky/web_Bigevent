@@ -24,17 +24,17 @@
             <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"
               class="layui-nav-img">
             <span class="text-user">A</span>
-            tester
+            <span id="tobusername"></span>
           </a>
           <dl class="layui-nav-child">
-            <dd><a href="">基本资料</a></dd>
-            <dd><a href="">更换头像</a></dd>
-            <dd><a href="">修改密码</a></dd>
+            <dd><a href="./user/userinfo.html" target="sy">基本资料</a></dd>
+            <dd><a href="./user/userpoto.html" target="sy">更换头像</a></dd>
+            <dd><a href="./user/userpassw.html" target="sy">修改密码</a></dd>
           </dl>
         </li>
         <li class="layui-nav-item">
           <a href="javascript:;" id="outuser">
-            
+
             <i class="layui-icon"><i class="iconfont icon-tuichu"></i>退出</i>
           </a>
         </li>
@@ -67,8 +67,9 @@
             <dl class="layui-nav-child">
               <dd><a href="./user/userinfo.html" target="sy"><i class="layui-icon layui-icon-file-b"></i>
                   基本资料</a></dd>
-              <dd><a href="javascript:;"><i class="layui-icon layui-icon-picture"></i> 更换头像</a></dd>
-              <dd><a href="./user/userpassw.html" target="sy"><i class="layui-icon layui-icon-loading"></i> 重置密码</a></dd>
+              <dd><a href="./user/userpoto.html" target="sy"><i class="layui-icon layui-icon-picture"></i> 更换头像</a></dd>
+              <dd><a href="./user/userpassw.html" target="sy"><i class="layui-icon layui-icon-loading"></i> 重置密码</a>
+              </dd>
 
             </dl>
           </li>
@@ -95,7 +96,7 @@
   <script src="./assets/lib/jquery.js"></script>
   <script src="./assets/js/baseAPI.js"></script>
   <script src="./assets/js/index.js"></script>
-  
+
   <!-- <script>
     //JS 
     layui.use(['element', 'layer', 'util'], function () {
