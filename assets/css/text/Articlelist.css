@@ -1,0 +1,14 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 30px;
+    background: #f2f3f5;
+}
+
+#listbianji {
+    margin-left: 25px;
+}

@@ -121,16 +121,18 @@ $(function () {
 
       $.ajax({
         type: "get",
+        // 细节 少个斜杠就无法发送请求
         url: "/my/article/deletecate/" + id,
         success: function (res) {
           if (res.status != 0) {
-        
+
             return layer.msg(res.message)
 
           }
+
           layer.msg(res.message)
           getlist()
-          
+
 
 
         }
