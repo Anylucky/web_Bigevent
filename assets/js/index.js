@@ -12,6 +12,7 @@ $(function () {
         });
     })
 })
+
 // 获取个人信息
 function gitusermsg() {
     $.ajax({

@@ -20,19 +20,19 @@
                     <label class="layui-form-label">登录名称</label>
                     <div class="layui-input-block">
                         <input type="text" name="username" required lay-verify="required" placeholder="请输入登录名称"
-                            autocomplete="off" class="layui-input">
+                            autocomplete="off" class="layui-input" readOnly>
                     </div>
                 </div>
                 <div class="layui-form-item"><label class="layui-form-label">用户名称</label>
                     <div class="layui-input-block">
-                        <input type="text" name="nickname" required lay-verify="required" placeholder="请输入用户名称"
+                        <input type="text" name="nickname" required lay-verify="required|nickname" placeholder="请输入用户名称"
                             autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户邮箱</label>
                     <div class="layui-input-block">
-                        <input type="text" name="email" required lay-verify="required" placeholder="请输入用户邮箱"
+                        <input type="text" name="email" required lay-verify="required|email" placeholder="请输入用户邮箱"
                             autocomplete="off" class="layui-input">
                     </div>
                 </div>

@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f2f3f5;
+}
+
+.layui-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#listscrform,
+#listscrformRevise {
+    padding-top: 20px;
+    padding-right: 100px;
+}
+
+.ride {
+    border-radius: 30px;
+}
