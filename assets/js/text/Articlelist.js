@@ -4,8 +4,8 @@ $(function () {
   var data1 = {
     pagenum: 1,
     pagesize: 2,
-    cate_id: '',
-    state: ''
+    cate_id: "",
+    state: ""
   }
 
   // 定义layui的提示信息
@@ -19,16 +19,15 @@ $(function () {
       data: data1,
       success: function (res) {
         if (res.status != 0) {
-          return layer.msg(res.message)
+          return console.log('获取文章失败');
         }
-        layer.msg(res.message)
+        console.log('获取文章成功');
         console.log(res);
+
         let mao = template('listArt', res)
         console.log(mao);
         $('tbody').html(mao)
         console.log(res);
-
-
         getlistjump(res.total)
 
       }
@@ -58,12 +57,12 @@ $(function () {
 
   var form = layui.form
 
-  // 分类渲染
+  // 下拉分类渲染
   listfenlei()
   function listfenlei() {
     $.ajax({
       type: "get",
-      url: "/my/article/cates/",
+      url: "/my/article/cates",
       success: function (res) {
         if (res.status != 0) {
           return console.log(res.message);
@@ -73,19 +72,22 @@ $(function () {
         console.log(res);
         let listdata = template('xialaliebiao', res)
         $('.layui-form [name =cate_id ]').html(listdata)
+        // layui内置方法  重新渲染下拉列表
         form.render()
+        // getlistArt()
       }
     });
   }
 
   // 监听表单的提交事件
-  $('#layui-form').on('submit', function (e) {
+  $('.layui-form').on('submit', function (e) {
     // 阻止默认事件
     e.preventDefault();
     let cate_id = $('[name = cate_id]').val();
     let state = $('[name = state]').val();
-    p.cate_id = cate_id
-    p.state = state
+    console.log(cate_id, state);
+    data1.cate_id = cate_id
+    data1.state = state
     getlistArt()
   })
 

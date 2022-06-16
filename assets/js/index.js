@@ -25,7 +25,7 @@ function gitusermsg() {
         },
         success: function (res) {
             if (res.status !== 0) return console.log(res.message);
-            console.log(res);
+            // console.log(res);
             // 成功后 进行渲染页面
             gituserimg(res.data)
         }

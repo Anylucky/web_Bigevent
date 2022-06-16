@@ -19,10 +19,10 @@
       <form class="layui-form" action="">
         <div class="layui-form-item layui-inline">
           <select name="cate_id" lay-verify="">
-            <option value="">选择分类</option>
+            <!-- <option value="">选择分类</option>
             <option value="010">北京</option>
             <option value="021">上海</option>
-            <option value="0571">杭州</option>
+            <option value="0571">杭州</option> -->
           </select>
         </div>
         <div class="layui-form-item layui-inline">
@@ -91,7 +91,7 @@
         <button type="button" class="layui-btn  layui-btn-xs layui-btn-normal" id="listbianji">
           编辑
         </button>
-        <button type="button" class="layui-btn  layui-btn-xs btn-delete" list-delete="{{value.id}}">
+        <button type="button" class="layui-btn  layui-btn-xs btn-delete" list-delete="{{$value.Id}}">
           删除
         </button>
       </td>
@@ -101,9 +101,9 @@
 
   <!-- 定义下拉模板 -->
   <script type="text/html" id="xialaliebiao">
-    <option value="">选择分类</option>
+    <option value="">所有分类</option>
     {{each data}}
-    <option value="0571">{{$value.name}}</option>
+    <option value="{{$value.Id}}">{{$value.name}}</option>
     {{/each}}
   </script>
 
