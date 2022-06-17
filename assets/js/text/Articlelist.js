@@ -22,12 +22,12 @@ $(function () {
           return console.log('获取文章失败');
         }
         console.log('获取文章成功');
-        console.log(res);
+        // console.log(res);
 
         let mao = template('listArt', res)
-        console.log(mao);
+        // console.log(mao);
         $('tbody').html(mao)
-        console.log(res);
+        // console.log(res);
         getlistjump(res.total)
 
       }
@@ -69,7 +69,7 @@ $(function () {
 
         }
         console.log(res.message)
-        console.log(res);
+        // console.log(res);
         let listdata = template('xialaliebiao', res)
         $('.layui-form [name =cate_id ]').html(listdata)
         // layui内置方法  重新渲染下拉列表
@@ -79,13 +79,13 @@ $(function () {
     });
   }
 
-  // 监听表单的提交事件
+  // 监听下拉表单的提交事件
   $('.layui-form').on('submit', function (e) {
     // 阻止默认事件
     e.preventDefault();
     let cate_id = $('[name = cate_id]').val();
     let state = $('[name = state]').val();
-    console.log(cate_id, state);
+    // console.log(cate_id, state);
     data1.cate_id = cate_id
     data1.state = state
     getlistArt()
@@ -101,16 +101,19 @@ $(function () {
       //数据总数，从服务端得到
       limit: data1.pagesize,
       curr: data1.pagenum,
+      layout: ['count', 'limit', 'prev', 'page', 'next', 'skip'],  //定义模块
+      limits: [2, 5, 7, 10],  //定义每页显示多少数据
       jump: function (obj, first) {
         data1.pagenum = obj.curr
         data1.pagesize = obj.limit
         if (!first) {
+          // first  有两个行为
+          // 1是点击事件  为true
+          // 2是默认触发行为  为undfind  FALSE
           getlistArt()
 
         }
-      },
-      layout: ['count', 'limit', 'prev', 'page', 'next', 'skip'],
-      limits: [2, 5, 7, 10]
+      }
 
 
     });
@@ -147,6 +150,28 @@ $(function () {
 
 
       layer.close(index);
+    });
+  })
+
+
+  // 修改文章模块
+  $('tbody').on('click', '#listbianji', function (e) {
+    let id = $(this).attr('list-delete');
+    //  发起请求
+    $.ajax({
+      type: "GET",
+      url: "/my/article/" + id,
+      success: function (res) {
+        if (res.status != 0) {
+          return layui.layer.msg('获取文章失败')
+
+        }
+        layui.layer.msg('获取文章成功')
+        // console.log(res);
+
+        localStorage.setItem('xiugai', JSON.stringify(res.data))
+        location.href = '/text/xiugaiwenzhang.html'
+      }
     });
   })
 })

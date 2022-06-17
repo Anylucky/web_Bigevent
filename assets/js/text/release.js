@@ -61,11 +61,6 @@ $(function () {
             .cropper('destroy')      // 销毁旧的裁剪区域
             .attr('src', newImgURL)  // 重新设置图片路径
             .cropper(options)        // 重新初始化裁剪区域
-
-
-
-
-
     })
     var zhuangtai = '发布'
     $('#caogao').on('click', function (e) {
@@ -76,10 +71,6 @@ $(function () {
         e.preventDefault()
         let data = new FormData($(this)[0])
         data.append('state', zhuangtai)
-        // data.forEach(function (v, k) {
-        //     console.log(k, v);
-        // })
-
         // 将裁剪区域 裁剪的文件 拿出来
         $image
             .cropper('getCroppedCanvas', { // 创建一个 Canvas 画布
